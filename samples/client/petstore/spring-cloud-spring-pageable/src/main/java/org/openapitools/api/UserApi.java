@@ -152,6 +152,21 @@ public interface UserApi {
 
 
     /**
+     * OPTIONS /user/logout : logoutUserOptions
+     *
+     * @return endpoint configuration response (status code 200)
+     */
+    @ApiOperation(value = "logoutUserOptions", nickname = "logoutUserOptions", notes = "", tags={ "user", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "endpoint configuration response") })
+    @RequestMapping(
+        method = RequestMethod.OPTIONS,
+        value = "/user/logout"
+    )
+    ResponseEntity<Void> logoutUserOptions();
+
+
+    /**
      * PUT /user/{username} : Updated user
      * This can only be done by the logged in user.
      *
